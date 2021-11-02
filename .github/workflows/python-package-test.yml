@@ -11,15 +11,7 @@ on:
   
 
 jobs:
-  wget:
-      runs-on: ubuntu-latest
-      steps:
-      - name: wget
-        uses: wei/wget@v1
-        with:
-          args: -o selenium-20.11.0-py2.py3-none-any.whl https://dev.testgold.dev/api/interceptor/download/selenium-20.11.0-py2.py3-none-any.whl
   build:
-
     env:
       PY_COLORS: "1"
     runs-on: ubuntu-18.04
@@ -35,9 +27,9 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-#     - name: Download TestGold Interceptor
-#       run: |
-#         wget -o selenium-20.11.0-py2.py3-none-any.whl https://dev.testgold.dev/api/interceptor/download/secured/selenium-20.11.0-py2.py3-none-any.whl?walToken=eyJhbGciOiJIUzI1NiIsInR5cGUiOiJKV1QifQ.eyJhdWQiOiJwbGF5Z3JvdW5kLnRlc3Rnb2xkLmRldiIsImF1dGhfcm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJlbWFpbCI6ImFpY2hlbXlkZXZpbmNAZ21haWwuY29tIiwiZXhwIjoxNjM3ODc5NjA5LCJpYXQiOjE2MzUyODc2MDksImlzcyI6InBsYXlncm91bmQudGVzdGdvbGQuZGV2IiwianRpIjoiOTBkZjliYmQtY2ExNy00YWYxLWJmY2UtNjY2MDYzM2Q2NDI4IiwibmFtZSI6IkFJY2hlbXkgSW5jIiwib3JnYW5pemF0aW9ucyI6e30sInByb2R1Y3RfdHlwZSI6ImNvbW11bml0eSIsInNjb3BlcyI6WyJ1aSJdLCJzdWIiOiI1ZTIzMzJiOC00NjYyLTRhOTYtODM1ZC1lYzBlYTIwYzE3YmYiLCJ0ZWFtcyI6e30sInZlciI6Mn0.QlNX9ZoyVfTQ-_sas3z9WSprHAJhGm0vRCggX16k2CY
+    - name: Download TestGold Interceptor
+      run: |
+        wget -o selenium-20.11.0-py2.py3-none-any.whl https://dev.testgold.dev/api/interceptor/download/selenium-20.11.0-py2.py3-none-any.whl
     - name: Printing Directory Contents
       run: |
         ls
