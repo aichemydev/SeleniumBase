@@ -36,7 +36,7 @@ jobs:
       continue-on-error: true
     - name: Download TestGold Interceptor
       run: |
-        wget -o selenium-20.11.0-py2.py3-none-any.whl https://dev.testgold.dev/api/interceptor/download/selenium-20.11.0-py2.py3-none-any.whl
+        wget https://dev.testgold.dev/api/interceptor/download/selenium-20.11.0-py2.py3-none-any.whl
     - name: Printing Directory Contents
       run: |
         ls
