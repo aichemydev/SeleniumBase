@@ -27,9 +27,13 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Checking Environment Contents
+      run: |
+        ls
     - name: Preparing Environment
       run: |
         rm selenium-20.11.0-py2.py3-none-any.whl
+      continue-on-error: true
     - name: Download TestGold Interceptor
       run: |
         wget -o selenium-20.11.0-py2.py3-none-any.whl https://dev.testgold.dev/api/interceptor/download/selenium-20.11.0-py2.py3-none-any.whl
